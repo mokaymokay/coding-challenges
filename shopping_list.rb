@@ -3,6 +3,7 @@
 # When the user enters a list item, the list item gets added to the shopping list.
 # When the user types "view", the program displays a numbered list.
 
+
 class Item
 
   def initialize
@@ -24,8 +25,8 @@ class ShoppingList
     user_input = gets.chomp
     if user_input == "add"
       p "add"
+      add()
     elsif user_input == "view"
-      p "view"
       view()
     elsif user_input == "quit"
       p "bye"
@@ -33,20 +34,13 @@ class ShoppingList
     end
   end
 
-  # def add
-  #   puts "What is the name of the list?"
-  #   @name = gets.chomp
-  #   @list = Array.new @name
-  # end
-  #
-  # def add_to_list
-  #   puts "What would you like to add?"
-  #   @item = gets.chomp.to_s
-  #     while @item != "quit" || @item != "view"
-  #       @list.push(@item)
-  #     end
-  # end
-  #
+  def add
+    puts "What would you like to add?"
+    user_input = gets.chomp.to_s
+    list.push(user_input)
+    get_input
+  end
+
   def view
     puts @name + ": "
     @list.each_with_index do |item, index|
