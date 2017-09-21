@@ -23,7 +23,7 @@ class ShoppingList
 
   def get_input
     puts "To add to a shopping list, type 'add'. To view your list, type 'view'. To exit the program, type 'quit'."
-    user_input = gets.chomp
+    user_input = gets.chomp.to_s
     if user_input == "add"
       add()
     elsif user_input == "view"
@@ -31,7 +31,7 @@ class ShoppingList
     elsif user_input == "quit"
       return
     else
-      "Please enter an appropriate command."
+      get_input()
     end
   end
 
@@ -40,10 +40,10 @@ class ShoppingList
     user_input = gets.chomp.to_s
     if user_input != "done"
       list.push(user_input)
-      add()
+      view()
     else
       view()
-      exit
+      return
     end
   end
 
@@ -54,15 +54,16 @@ class ShoppingList
     end
     puts "Anything else?"
     # If user inputs no, then show instructions again. If users adds item, then add to list.
-    loop do
-      user_input = gets.chomp.to_s
-      if user_input == "no"
-        get_input()
-        break
-      else
-        list.push(user_input)
-      end
-    puts list
+    user_input = gets.chomp.to_s
+    if user_input == "no"
+      get_input
+    elsif user_input == "quit"
+      return
+    elsif user_input == "done"
+      view()
+    else
+      list.push(user_input)
+      view()
     end
   end
 end
