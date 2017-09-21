@@ -1,7 +1,8 @@
 # The shopping list helps users keep track of things to be purchased.
 # When the user types "add", the program prompts the user for a list item.
 # When the user enters a list item, the list item gets added to the shopping list.
-# When the user types "view", the program displays a numbered list.
+# The user can continue adding items until typing "quit". When the user types
+#{ }"view", the program displays a numbered list, unless the list is empty.
 
 
 class Item
@@ -24,21 +25,26 @@ class ShoppingList
     puts "To add to a shopping list, type 'add'. To view your list, type 'view'. To exit the program, type 'quit'."
     user_input = gets.chomp
     if user_input == "add"
-      p "add"
       add()
     elsif user_input == "view"
       view()
     elsif user_input == "quit"
-      p "bye"
       return
+    else
+      "Please enter an appropriate command."
     end
   end
 
   def add
-    puts "What would you like to add?"
+    puts "What would you like to add? Enter 'done' when you are finished."
     user_input = gets.chomp.to_s
-    list.push(user_input)
-    get_input
+    if user_input != "done"
+      list.push(user_input)
+      add()
+    else
+      view()
+      exit
+    end
   end
 
   def view
@@ -48,8 +54,15 @@ class ShoppingList
     end
     puts "Anything else?"
     # If user inputs no, then show instructions again. If users adds item, then add to list.
-    if gets.chomp == "no"
-      get_input()
+    loop do
+      user_input = gets.chomp.to_s
+      if user_input == "no"
+        get_input()
+        break
+      else
+        list.push(user_input)
+      end
+    puts list
     end
   end
 end
