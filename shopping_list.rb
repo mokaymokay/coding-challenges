@@ -42,7 +42,7 @@ class ShoppingList
       list.push(user_input)
       view()
     else
-      view()
+      get_input
       return
     end
   end
