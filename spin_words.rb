@@ -4,14 +4,23 @@
 # more than one word is present.
 # spin_words("Hey fellow warriors") => "Hey wollef sroirraw"
 # spin_words("This is a test") => "This is a test"
-# spin_words("This is another test" => "This is rehtona test"
+# spin_words("This is another test") => "This is rehtona test"
 
 def spin_words(string)
-  # turn string into array if it includes a space
-  #   loop through array to check for words with string size >= 5 and flip them
-  #   return array as string
-  # reverse word if string size >= 5
-  # return word as string
+  if string.include? " "
+    new_string = string.split(" ")
+    new_string.each do |word|
+      word.reverse! if word.size >= 5
+    end
+    p new_string * " "
+  else
+  p string if string.size < 5
+  p string.reverse! if string.size >= 5
+  end
 end
 
 spin_words("Hey fellow warriors")
+spin_words("This is a test")
+spin_words("This is another test")
+spin_words("Hey Jude")
+spin_words("I love dragons")
