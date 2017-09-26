@@ -3,5 +3,8 @@
 #  =>  WE ARE THE CHAMPIONS MY FRIEND
 
 def song_decoder(song)
-  #TODO
+  p song.gsub("WUB", " ").split * " "
 end
+
+song_decoder("WUBWEWUBAREWUBWUBTHEWUBCHAMPIONSWUBMYWUBFRIENDWUB")
+song_decoder("WUBWUBIWUBAMWUBWUBX")
