@@ -19,7 +19,6 @@ def word_score(word)
   if word.squeeze == word
     # split into individual strings
     individual = word.split("")
-    p individual
     array = []
     # fetch values from hash for each key and push into array
     individual.each do |element|
@@ -28,7 +27,8 @@ def word_score(word)
     puts "Score of " + word + ": " + array.flatten.inject(0, :+).to_s
   else
     # need to write method for consecutive repetition
-    p word
+    puts "Error"
+    word_score("")
   end
 end
 
