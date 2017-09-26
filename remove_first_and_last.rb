@@ -5,8 +5,8 @@
 # are joined by adding a single space between each consecutive array element.
 
 def array(string)
-  # output nil if "" or if string doesn't include ", "
-  if string == "" || string.include?(", ") == false
+  # output nil if "" or if string length is 1
+  if string == "" || string.length == 1
     return nil
   end
   # else convert string to array (split by using ", ")
