@@ -5,5 +5,12 @@
 # i.e. iq_test("1 2 1 1") => 2
 
 def iq_test(numbers)
-  #your code here
+  # turn numbers into array
+  # if zeroth index is even
+    # loop through array to find odd
+    # return index
+  # else
+    # loop through array to find even
+    # return index
+  # end
 end
