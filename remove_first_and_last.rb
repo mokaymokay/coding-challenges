@@ -5,16 +5,12 @@
 # are joined by adding a single space between each consecutive array element.
 
 def array(string)
-  return nil if string == "" || string.length == 1
-  a = string.split(", ")
-  return nil if a[2] == nil
-  a.delete_at(0)
-  a.pop
-  p a * " "
+  a = string.split ","
+  p a[1..-2].join " " if a.size > 2
 end
 
 array("")
 array("1")
-array("1, 3")
-array("1, 2, 3")
-array("1, 2, 3, 4")
+array("1,3")
+array("1,2,3")
+array("1,2,3,4")
