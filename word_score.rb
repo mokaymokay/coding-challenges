@@ -6,7 +6,7 @@
 # e.g. word_score("bbb") => 2^3 + 2 => 10
 
 def word_score(word)
-  puts "Enter a 3-letter English word with no repetition to be scored."
+  puts "Enter an English word with no consecutive repetition to be scored."
 
   score_table = {"a" => 1, "b" => 2, "c" => 3, "d" => 4, "e" => 5, "f" => 6,
                "g" => 7, "h" => 8, "i" => 9, "j" => 10, "k" => 11, "l" => 12,
@@ -17,19 +17,19 @@ def word_score(word)
   word = gets.chomp.to_s
   # check for duplicates
   if word.squeeze == word
+    # split into individual strings
     individual = word.split("")
-    p individual[0..(individual.length)]
-    new_array = score_table.fetch_values(individual[0], individual[1], individual[2])
-    p new_array
-    puts "Score of " + word + ": " + new_array.inject(0, :+).to_s
+    p individual
+    array = []
+    # fetch values from hash for each key and push into array
+    individual.each do |element|
+      array.push(score_table.fetch_values(element))
+    end
+    puts "Score of " + word + ": " + array.flatten.inject(0, :+).to_s
   else
     # need to write method for consecutive repetition
     p word
   end
-  # individual.each do |element|
-  #   puts score_table.values_at(individual)
-  # end
-  # individual.each { |letter| puts score_table.fetch_values(individual)}
 end
 
 word_score("")
