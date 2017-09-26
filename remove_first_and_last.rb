@@ -8,11 +8,20 @@ def array(string)
   # output nil if "" or if string length is 1
   if string == "" || string.length == 1
     return nil
-  end
+  else
   # else convert string to array (split by using ", ")
-  #   output nil if array[2] is nil
-  #   else delete character at index 0 and last index
-  # output array as string
+    a = string.split(", ")
+      # output nil if array[2] is nil
+      if a[2] == nil
+        return nil
+      # else delete character at index 0 and last index
+      else
+        a.delete_at(0)
+        a.pop
+      end
+    # output array as string
+    p a * " "
+  end
 end
 
 array("")
