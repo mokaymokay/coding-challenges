@@ -5,5 +5,18 @@
 # are joined by adding a single space between each consecutive array element.
 
 def array(string)
-  #your code here
+  # output nil if "" or if string doesn't include ", "
+  if string == "" || string.include?(", ") == false
+    return nil
+  end
+  # else convert string to array (split by using ", ")
+  #   output nil if array[2] is nil
+  #   else delete character at index 0 and last index
+  # output array as string
 end
+
+array("")
+array("1")
+array("1, 3")
+array("1, 2, 3")
+array("1, 2, 3, 4")
