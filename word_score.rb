@@ -5,6 +5,8 @@
 # repetition, plus the base.
 # e.g. word_score("bbb") => 2^3 + 2 => 10
 
+require 'pry'
+
 def word_score(word)
 
   score_table = {"a" => 1, "b" => 2, "c" => 3, "d" => 4, "e" => 5, "f" => 6,
@@ -23,9 +25,26 @@ def word_score(word)
     end
     puts "Score of " + word + ": " + score.to_s
   else
-    # need to write method for consecutive repetition
-    return
+    individual = word.split("")
+    score = 0
+    individual.each_with_index do |character, i|
+      if i == individual.length - 1
+        break
+      end
+      if individual[i] == individual[i + 1]
+
+      else
+        score += score_table[character]
+      end
+    end
+    # iterate over each character
+    # check if each character is equal to next character
+    # if a == b, check next one until it's not equal
+    #   then index of last repetition minus index of first repetition
+    #   set it to power
+    #   use repeated character as base and add to score
+    # else, grab value from hash and add to score
   end
 end
 
-word_score("abc")
+word_score("abba")
