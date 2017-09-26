@@ -8,14 +8,17 @@
 
 def spin_words(string)
   if string.include? " "
-    new_string = string.split(" ")
-    new_string.each do |word|
+    string = string.split(" ")
+    string.each do |word|
       word.reverse! if word.size >= 5
     end
-    p new_string * " "
+    p string * " "
   else
-  p string if string.size < 5
-  p string.reverse! if string.size >= 5
+    if string.size < 5
+      p string
+    else
+      p string.reverse!
+    end
   end
 end
 
