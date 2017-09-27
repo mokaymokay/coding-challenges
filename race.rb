@@ -8,12 +8,13 @@
 
 def race(v1, v2, g)
   return nil if v1 >= v2
-  # solves problem in lowest unit of measurement, seconds
-  s = 3600 * g / (v2 - v1)
+  # solves problem in seconds in float format
+  s = (g.fdiv(v2 - v1) * 3600).to_i
   h = s / 3600
-  s = s - 3600 * h
-  mn = s / 60
-  s = s - 60 * mn
+  # remainder = minutes
+  mn = s / 60 % 60
+  # remainder = seconds
+  s = s % 60
   p [h, mn, s]
 end
 
