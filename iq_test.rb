@@ -8,11 +8,8 @@
 
 def iq_test(numbers)
   arr = numbers.split.map(&:to_i).map(&:even?)
-  if arr.count(true) > 1 # if there's more than one even number
-    p arr.index(false) + 1
-  else
-    p arr.index(true) + 1
-  end
+  # if there's more than one even number
+  arr.count(true) > 1 ? (p arr.index(false) + 1) : (p arr.index(true) + 1)
 end
 
 iq_test("2 4 7 8 10")
