@@ -7,5 +7,15 @@
 # e.g. race(80, 91, 37) => [3, 21, 49]
 
 def race(v1, v2, g)
-    # your code
+  return nil if v1 >= v2
+  # solves problem in lowest unit of measurement, seconds
+  s = 3600 * g / (v2 - v1)
+  h = s / 3600
+  s = s - 3600 * h
+  mn = s / 60
+  s = s - 60 * mn
+  p [h, mn, s]
 end
+
+race(720, 850, 70)
+race(80, 91, 37)
