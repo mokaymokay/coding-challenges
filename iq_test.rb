@@ -7,18 +7,20 @@
 # The second number is different.
 
 def iq_test(numbers)
-  arr = numbers.split " "
-  if arr[0].to_i.even? && arr[1].to_i.odd?
-    puts "1"
-  elsif arr[0].to_i.even?
+  arr = numbers.split(" ").map(&:to_i)
+  if arr[0].even? && arr[1].odd?
+    puts "1" if arr[2].odd?
+    puts "2" if arr[2].even?
+  elsif arr[0].even? && arr[1].even?
     arr.each do |number|
-      puts (arr.rindex(number) + 1).to_s if number.to_i.odd?
+      puts arr.rindex(number) + 1 if number.odd?
     end
-  elsif arr[0].to_i.odd? && arr[1].to_i.even?
-    puts "1"
+  elsif arr[0].odd? && arr[1].even?
+    puts "1" if arr[2].even?
+    puts "2" if arr[2].odd?
   else
     arr.each do |number|
-      puts (arr.rindex(number) + 1) if number.to_i.even?
+      puts arr.rindex(number) + 1 if number.even?
     end
   end
 end
