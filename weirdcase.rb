@@ -9,5 +9,13 @@
 # e.g. weirdcase("Weird string case") => "WeIrD StRiNg CaSe"
 
 def weirdcase(string)
-  #TODO
+  string.split(" ").map do |word|
+    word.split("").each_with_index.map do |char, i|
+      i.even? ? char.upcase : char.downcase
+    end.join("")
+  end.join(" ")
 end
+
+weirdcase("String")
+weirdcase("Weird string case")
+weirdcase("Looks like you passed")
