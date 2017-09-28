@@ -9,8 +9,7 @@
 # a or b might be []. If a or b are empty the result is evident by itself.
 
 def comp(array1, array2)
-  return false if array1.nil? || array2.nil?
-  array1.collect { |number| number ** 2}.sort == array2.sort ? true : false
+  array1.nil? || array2.nil? ? false : array1.collect { |number| number ** 2}.sort == array2.sort
 end
 
 comp([1, 2, 3], nil)
