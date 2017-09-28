@@ -14,5 +14,18 @@
 # e.g. h = 3, bounce = 1, window = 1.5, result is -1 (Condition 2 is not fullfilled)
 
 def bouncing_ball(h, bounce, window)
-  #TODO
+  if h > 0 && bounce > 0 && bounce < 1 && window < h
+    result = -1
+    loop do
+      h = h * bounce
+      result += 2
+      break if window > h
+    end
+    result
+  else
+    return -1
+  end
 end
+
+bouncing_ball(3, 0.66, 1.5)
+bouncing_ball(30, 0.66, 1.5)
