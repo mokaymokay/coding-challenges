@@ -7,11 +7,11 @@
 
 def persistence(n)
   count = 0
-  until n.to_s.size == 1
+  until n < 10
     n = n.to_s.split("").map(&:to_i).inject(:*)
     count += 1
   end
-  p count
+  count
 end
 
 persistence(39)
