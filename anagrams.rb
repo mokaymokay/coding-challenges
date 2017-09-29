@@ -7,5 +7,11 @@
 # anagrams('laser', ['lazing', 'lazy',  'lacer']) => []
 
 def anagrams(word, words)
-  #TODO
+  result = []
+  words.each do |x|
+    result << x if x.chars.sort == word.chars.sort
+  end
+  p result
 end
+
+anagrams('abba', ['aabb', 'abcd', 'bbaa', 'dada'])
