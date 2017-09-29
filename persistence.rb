@@ -6,5 +6,14 @@
 # e.g. persistence(4) => 0 ; because 4 is already a one-digit number
 
 def persistence(n)
-    # your code
+  count = 0
+  until n.to_s.size == 1
+    n = n.to_s.split("").map(&:to_i).inject(:*)
+    count += 1
+  end
+  p count
 end
+
+persistence(39)
+persistence(999)
+persistence(4)
