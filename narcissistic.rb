@@ -7,9 +7,8 @@
 # inputs is not required, only valid integers will be passed into the function.
 
 def narcissistic?(value)
-  arr = value.to_s.split("").map(&:to_i)
-  arr.map { |x| x ** arr.length }.reduce(:+) == value ? true : false
+  value.to_s.split("").map { |x| x.to_i**value.to_s.length }.reduce(:+) == value
 end
 
 narcissistic?(153)
-narcissistic?(34517)
+narcissistic?(1634)
