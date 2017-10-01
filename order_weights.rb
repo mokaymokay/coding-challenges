@@ -12,6 +12,18 @@
 #
 # All numbers in the list are positive numbers and the list can be empty.
 
-def order_weights(array)
-  #TODO
+def order_weights(string)
+  string = string.split(" ")
+  # go through each number to convert to integer and sum up digits
+  weight = string.map do |number|
+    number.split("").map { |x| x.to_i }.reduce(:+)
+  end
+  # combine two arrays, sort by weight then string, remove weight from each array
+  result = weight.zip(string).sort.each do |x|
+    x.shift
+  end
+  result.flatten.join(" ")
 end
+
+order_weights("56 65 74 100 99 68 86 180 90")
+order_weights("2000 10003 1234000 44444444 9999 11 11 22 123")
