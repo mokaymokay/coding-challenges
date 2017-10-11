@@ -21,9 +21,7 @@ def order_weights(string)
   # combine two arrays (weight with its corresponding number in the format of
   # [weight, "string_number"]), sort by weight then string, create new array after
   # removing the first element, weight, from each set of data
-  result = weight.zip(string).sort.each do |x|
-    x.shift
-  end
+  result = weight.zip(string).sort.each { |x| x.shift }
   result.flatten.join(" ")
 end
 
