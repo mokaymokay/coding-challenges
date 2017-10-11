@@ -18,7 +18,9 @@ def order_weights(string)
   weight = string.map do |number|
     number.split("").map { |x| x.to_i }.reduce(:+)
   end
-  # combine two arrays, sort by weight then string, remove weight from each array
+  # combine two arrays (weight with its corresponding number in the format of
+  # [weight, "string_number"]), sort by weight then string, create new array after
+  # removing the first element, weight, from each set of data
   result = weight.zip(string).sort.each do |x|
     x.shift
   end
