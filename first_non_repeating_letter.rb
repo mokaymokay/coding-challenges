@@ -6,6 +6,10 @@
 # i.e. 'sTreSS' => 'T'
 # If a string contains all repeating characters, it should return the empty string ("").
 
-def  first_non_repeating_letter(s)
-  #
+def first_non_repeating_letter(string)
+  string.split("").each {|char| return char if string.downcase.count(char.downcase)==1}
+  return ""
 end
+
+first_non_repeating_letter("sTreSS")
+first_non_repeating_letter("aabbdcc")
