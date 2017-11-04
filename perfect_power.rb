@@ -2,7 +2,7 @@
 
 # In mathematics, a perfect power is a positive integer that can be expressed as
 # an integer power of another positive integer. More formally, n is a perfect power
-# if there exist natural numbers m > 1, and k > 1 such that mk = n.
+# if there exist natural numbers m > 1, and k > 1 such that m ** k = n.
 
 # Your task is to check wheter a given integer is a perfect power. If it is a perfect
 # power, return a pair m and k with mk = n as a proof. Otherwise return nil.
@@ -18,5 +18,15 @@
 # isPP(5) => nil
 
 def isPP(n)
-    # your code
+  for m in (2..n) do
+    for k in (2..n) do
+      return [m, k] if (m ** k) == n
+      break if (m ** k) > n
+    end
+    return nil if (m ** 2) > n
+  end
 end
+
+isPP(4)
+isPP(9)
+isPP(5)
