@@ -4,8 +4,15 @@
 # presses("WHERE DO U WANT 2 MEET L8R") => 47
 
 def presses(phrase)
-#code
+
+  keys = ["1", " 0", "ABC2", "DEF3", "GHI4", "JKL5", "MNO6", "PQRS7", "TUV8", "WXYZ9"]
+
+  counter = phrase.upcase.split("").map do |char|
+    keys.find { |key| key.include?(char) }.index(char) + 1
+  end
+  p counter.reduce(:+)
 end
 
 presses("LOL")
 presses("HOW R U")
+presses("WHERE DO U WANT 2 MEET L8R")
