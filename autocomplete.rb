@@ -5,5 +5,13 @@
 # i.e. autocomplete('ai', ['airplane','airport','apple','ball']) = ['airplane','airport']
 
 def autocomplete(input, dictionary)
-  #your code here
+  output = Array.new
+  dictionary.each do |word|
+    output << word if word.downcase.start_with?(input.gsub(/[^a-zA-Z]/, ""))
+    break if output.length == 5
+  end
+  p output
 end
+
+autocomplete('ai', ['airplane','airport','apple','ball'])
+autocomplete('a', ["abnormal", "arm-wrestling", "absolute", "airplane", "airport", "amazing", "apple"])
