@@ -19,3 +19,15 @@ Return a string that concatenates all the times the string is repeated.
 - INPUT: repeat("bye", 6);
 - OUTPUT: 'byebyebyebyebyebye'
 */
+
+function repeat(str, num){
+  var result = "";
+  for(num; num > 0; num--){
+    result += str;
+  }
+  return result;
+}
+
+repeat("yo", 4);
+repeat("yo", 0);
+repeat("bye", 6);
