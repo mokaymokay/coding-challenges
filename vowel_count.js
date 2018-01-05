@@ -11,7 +11,23 @@ Do not count 'y' as a vowel for this challenge.
 - INPUT: vowelCount("Good Job");
 - OUTPUT: 3
 
-
-- INPUT: vowelCount('Yankees');
+- INPUT: vowelCount("Yankees");
 - OUTPUT: 3
 */
+
+function vowelCount(str) {
+  var vowels = "aeiou",
+      str = str.toLowerCase(),
+      count = 0;
+
+  for(var index = 0; index < str.length ; index++){
+    if (vowels.indexOf(str[index]) >= 0) {
+      count++;
+    }
+  }
+  return count;
+}
+
+vowelCount("Good Job");
+vowelCount("Yankees");
+vowelCount("Fullstack Academy")
