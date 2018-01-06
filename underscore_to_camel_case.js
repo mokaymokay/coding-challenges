@@ -16,15 +16,15 @@ Make sure you support an unlimited number of underscores in the input!
 
 function underToCamel(str){
   var output = "",
-      found_underscore = false;
+      foundUnderscore = false;
 
   for(var i = 0; i < str.length ; i++){
     if(str[i] === "_"){
-      found_underscore = true;
+      foundUnderscore = true;
     } else {
-      if(found_underscore){
+      if(foundUnderscore){
         output += str[i].toUpperCase();
-        found_underscore = false;
+        foundUnderscore = false;
       } else {
         output += str[i];
       }
