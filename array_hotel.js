@@ -23,7 +23,22 @@ room numbers that are vacant.
 - OUTPUT: [0,3,4] since those are the vacant rooms
 */
 
-// code here
+function findVacantRooms(arr){
+  var vacantRooms = [];
+  for(var i = 0; i < arr.length; i++){
+    if (arr[i] === "vacant") {
+      vacantRooms.push(i);
+    }
+  }
+  if (vacantRooms.length === 0) {
+    return "No Vacancy";
+  } else {
+    return vacantRooms;
+  }
+}
+
+findVacantRooms(["vacant", "occupied", "occupied", "vacant", "vacant"]);
+findVacantRooms(["occupied", "occupied", "occupied"]);
 
 /*
 CHALLENGE 2: FIND THE CHEAPEST VACANT ROOM
