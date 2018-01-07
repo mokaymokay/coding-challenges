@@ -20,9 +20,9 @@ Return a string that concatenates all the times the string is repeated.
 - OUTPUT: 'byebyebyebyebyebye'
 */
 
-function repeat(str, num){
+function repeat(str, num) {
   var result = "";
-  for(num; num > 0; num--){
+  for (num; num > 0; num--) {
     result += str;
   }
   return result;

@@ -12,9 +12,9 @@ NOTE: Do not use the .reverse() method
 - OUTPUT: 'olleh'
 */
 
-function reverseString(str){
+function reverseString(str) {
   var output = "";
-  for(var count = 1; count <= str.length ; count++){
+  for (var count = 1; count <= str.length ; count++) {
     output += str[str.length - count];
   }
   return output;

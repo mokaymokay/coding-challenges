@@ -16,7 +16,7 @@ numbers from 1 to n. For n > 0, n! = 1*2*3*...*n. For n = 0, 0! = 1.
 
 function factorial(n) {
   var output = 1;
-  for(n; n > 0; n--){
+  for (n; n > 0; n--) {
     output *= n;
   }
   return output;
