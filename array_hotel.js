@@ -53,6 +53,36 @@ $150 and $175 for the night.
 Make a function to help someone find the cheapest available room in the hotel.
 Return the room number and its​ price.
 
+**Examples**
+
+- INPUT: findCheapestVacantRoom([112, "occupied", 150, 175, "occupied"])
+- OUTPUT: [0, 112] // since the cheapest vacant room is Room 0 at $112/night.
+
+- INPUT: findCheapestVacantRoom(["occupied", 820, "occupied", 700, 455, 722])
+- OUTPUT: [4, 455] // since the cheapest vacant room is Room 4 at $455/night.
+
 */
 
-// code here
+function findCheapestVacantRoom(arr) {
+  var cheapest,
+      cheapestRoom = [];
+  for (var index = 0; index < arr.length; index++) {
+    if (arr[index] !== "occupied") {
+      if (cheapest === undefined || arr[index] < cheapest) {
+        cheapest = arr[index];
+      }
+    }
+  }
+
+  if (cheapest) {
+    cheapestRoom.push(arr.indexOf(cheapest), cheapest);
+    return cheapestRoom;
+  } else {
+    return cheapestRoom;
+  }
+  
+}
+
+findCheapestVacantRoom([112, "occupied", 150, 175, "occupied"]);
+findCheapestVacantRoom(["occupied", 820, "occupied", 700, 455, 722]);
+findCheapestVacantRoom(["occupied", "occupied", "occupied"]);
