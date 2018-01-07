@@ -23,9 +23,9 @@ room numbers that are vacant.
 - OUTPUT: [0,3,4] since those are the vacant rooms
 */
 
-function findVacantRooms(arr){
+function findVacantRooms(arr) {
   var vacantRooms = [];
-  for(var i = 0; i < arr.length; i++){
+  for (var i = 0; i < arr.length; i++) {
     if (arr[i] === "vacant") {
       vacantRooms.push(i);
     }
@@ -80,7 +80,7 @@ function findCheapestVacantRoom(arr) {
   } else {
     return cheapestRoom;
   }
-  
+
 }
 
 findCheapestVacantRoom([112, "occupied", 150, 175, "occupied"]);
