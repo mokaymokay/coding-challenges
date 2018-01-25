@@ -17,4 +17,14 @@ is a number of​ steps.
 
 - INPUT: rotate([11,15,28,9,10], 0)
 - OUTPUT: [11,15,28,9,10]
+
 */
+
+function rotate(array, steps) {
+
+  while (steps > 0) {
+    popped = array.pop();
+    array.unshift(popped);
+    steps--;
+  }
+  return array;
