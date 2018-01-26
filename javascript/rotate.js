@@ -28,3 +28,8 @@ function rotate(array, steps) {
     steps--;
   }
   return array;
+}
+
+rotate([22,11,500,92], 2);
+rotate([11,15,28,9,10], 0);
+rotate([5,2,0,13,14], 5);
