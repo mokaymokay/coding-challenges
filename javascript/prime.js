@@ -23,11 +23,7 @@ function prime(num) {
     }
   }
 
-  if (factors.length <= 2) {
-    return true;
-  } else {
-    return false;
-  }
+  return (factors.length <= 2 ? true : false);
 }
 
 prime(11);
