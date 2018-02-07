@@ -11,3 +11,15 @@ If a value is present in b, all of its occurrences must be removed from the othe
 array_diff([1,2,2,2,3],[2]) == [1,3]
 
 */
+
+function array_diff(array_a, array_b) {
+  var result = [];
+  for (i = 0; i < array_a.length; i++) {
+    if (array_b.includes(array_a[i]) === false) {
+      result.push(array_a[i]);
+    }
+  }
+  return result;
+}
+
+array_diff([1,2,2,2,3],[2]);
