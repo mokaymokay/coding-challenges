@@ -13,13 +13,7 @@ array_diff([1,2,2,2,3],[2]) == [1,3]
 */
 
 function array_diff(array_a, array_b) {
-  var result = [];
-  for (i = 0; i < array_a.length; i++) {
-    if (array_b.includes(array_a[i]) === false) {
-      result.push(array_a[i]);
-    }
-  }
-  return result;
+  return array_a.filter(num => !array_b.includes(num));
 }
 
 array_diff([1,2,2,2,3],[2]);
