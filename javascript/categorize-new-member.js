@@ -20,3 +20,18 @@ Input: [[18, 20],[45, 2],[61, 12],[37, 6],[21, 21],[78, 9]]
 Output: ["Open", "Open", "Senior", "Open", "Open", "Senior"]
 
 */
+
+function openOrSenior(data) {
+  var output = [];
+  for (var i = 0; i < data.length; i++) {
+    if ((data[i][0] >= 55) && (data[i][1] > 7)) {
+      output.push("Senior");
+    } else {
+      output.push("Open");
+    }
+  }
+  return output;
+}
+
+openOrSenior([[18, 20],[45, 2],[61, 12],[37, 6],[21, 21],[78, 9]]);
+openOrSenior([[3, 12],[55, 1],[91, -2],[54, 23]]);
