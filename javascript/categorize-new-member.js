@@ -22,10 +22,15 @@ Output: ["Open", "Open", "Senior", "Open", "Open", "Senior"]
 */
 
 function openOrSenior(data) {
+  // var output = [];
+  // for (var i = 0; i < data.length; i++) {
+  //   data[i][0] >= 55 && data[i][1] > 7 ? output.push("Senior") : output.push("Open");
+  // };
+  // return output;
   var output = [];
-  for (var i = 0; i < data.length; i++) {
-    data[i][0] >= 55 && data[i][1] > 7 ? output.push("Senior") : output.push("Open");
-  };
+  data.map(function (applicant) {
+    applicant[0] >= 55 && applicant[1] > 7 ? output.push("Senior") : output.push("Open");
+  });
   return output;
 }
 
