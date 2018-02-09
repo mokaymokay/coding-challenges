@@ -24,12 +24,8 @@ Output: ["Open", "Open", "Senior", "Open", "Open", "Senior"]
 function openOrSenior(data) {
   var output = [];
   for (var i = 0; i < data.length; i++) {
-    if ((data[i][0] >= 55) && (data[i][1] > 7)) {
-      output.push("Senior");
-    } else {
-      output.push("Open");
-    }
-  }
+    data[i][0] >= 55 && data[i][1] > 7 ? output.push("Senior") : output.push("Open");
+  };
   return output;
 }
 
