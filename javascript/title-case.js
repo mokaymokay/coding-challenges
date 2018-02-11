@@ -23,3 +23,12 @@ tests will pass undefined when this argument is unused.
 - OUTPUT: 'The Quick Brown Fox'
 
 */
+
+function titleCase(title, minorWords) {
+  title = title.toLowerCase().split(" ").map(function(word) {
+    return word.charAt(0).toUpperCase() + word.slice(1);
+  })
+  console.log(title);
+}
+
+titleCase('a clash of KINGS', 'a an the of');
