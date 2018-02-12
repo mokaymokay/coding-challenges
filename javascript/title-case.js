@@ -38,13 +38,12 @@ function titleCase(title, minorWords) {
     output += capitalizeFirst(title[0]);
     for (i = 1; i < title.length; i++) {
       if (minorWords.indexOf(title[i]) >= 0) {
-        output += " " + title[i].toLowerCase();
+        output += " " + title[i];
       } else {
         output += " " + capitalizeFirst(title[i]);
       }
     }
   };
-  console.log(output);
   return output;
 }
 
