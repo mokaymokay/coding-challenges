@@ -16,7 +16,7 @@ tests will pass undefined when this argument is unused.
 - INPUT: 'a clash of KINGS', 'a an the of'
 - OUTPUT: 'A Clash of Kings'
 
-- INPUT: THE WIND IN THE WILLOWS', 'The In', 'a an the of'
+- INPUT: 'THE WIND IN THE WILLOWS', 'The In'
 - OUTPUT: 'The Wind in the Willows'
 
 - INPUT: 'the quick brown fox'
@@ -25,10 +25,30 @@ tests will pass undefined when this argument is unused.
 */
 
 function titleCase(title, minorWords) {
-  title = title.toLowerCase().split(" ").map(function(word) {
-    return word.charAt(0).toUpperCase() + word.slice(1);
-  })
-  console.log(title);
+  var output = "";
+      minorWords = minorWords || " ";
+      minorWords = minorWords.toLowerCase().split(" ");
+
+  function capitalizeFirst(word) {
+    return word[0].toUpperCase() + word.slice(1);
+  }
+
+  if (title !== "") {
+    title = title.toLowerCase().split(" ");
+    output += capitalizeFirst(title[0]);
+    for (i = 1; i < title.length; i++) {
+      if (minorWords.indexOf(title[i]) >= 0) {
+        output += " " + title[i].toLowerCase();
+      } else {
+        output += " " + capitalizeFirst(title[i]);
+      }
+    }
+  };
+  console.log(output);
+  return output;
 }
 
+titleCase('');
 titleCase('a clash of KINGS', 'a an the of');
+titleCase('THE WIND IN THE WILLOWS', 'The In');
+titleCase('the quick brown fox');
