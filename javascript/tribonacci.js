@@ -20,20 +20,14 @@ If n < 3, return the signature array.
 */
 
 function tribonacci(signature, n) {
-  if (signature.length < 3) return signature;
-  if (signature.length > n) {
-    while (signature.length > n) {
-      signature.pop();
-    }
+  var result = [];
+  for (var i = 0; i < n; i++) {
+    result.push((i < 3) ? signature[i] : result[i-1] + result[i-2] + result[i-3]);
   }
-  while (signature.length < n) {
-    let i = signature.length - 1;
-    signature.push(signature[i] + signature[i-1] + signature[i-2]);
-  }
-  return signature;
+  return result;
 }
 
-console.log(tribonacci([1,1], 10));
+console.log(tribonacci([1,1,1], 10));
 console.log(tribonacci([0,0,1], 10));
 console.log(tribonacci([1,2,3], 10));
 console.log(tribonacci([100,200,300], 0));
