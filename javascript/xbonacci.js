@@ -20,16 +20,10 @@ by summing the last x elements until it has the length of n, and returns the seq
 
 function xbonacci(signature, n) {
   var result = [],
-      x = signature.length,
-      toAdd = [];
+      x = signature.length;
   for (let i = 0; i < n; i++) {
-    if (result.length < x) {
-      result.push(signature[i]);
-    } else {
-      toAdd = result.slice(result.length-signature.length, result.length);
-      var sum = toAdd.reduce( function(a,b){return a + b} );
-      result.push(sum);
-    }
+    result.length < x ? result.push(signature[i]) :
+                        result.push(result.slice(result.length-x).reduce((a,b) => a + b));
   }
   return result;
 }
