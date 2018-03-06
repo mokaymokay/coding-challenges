@@ -26,9 +26,13 @@ function queueTime(customers, n) {
   for (var i = 0; i < customers.length; i++) {
     if (n == 1) {
       time += customers[i];
+    } else if (n == 0) {
+      time = time;
     }
   }
   return time;
 }
 
 console.log(queueTime([5,3,4], 1));
+console.log(queueTime([5,3,4], 0));
+console.log(queueTime([], 1));
