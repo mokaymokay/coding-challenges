@@ -22,23 +22,17 @@ The 2nd, 3rd, and 4th people in the queue finish before the 1st person has finis
 */
 
 function queueTime(customers, n) {
-  var time = 0;
-  for (var i = 0; i < customers.length; i++) {
-    if (n == 1) {
-      time += customers[i];
-    } else if (n == 0) {
-      time = time;
-    } else if (n > customers.length) {
-      time = customers[i];
-      if (customers[i] < customers[i + 1]) {
-        time = customers[i + 1];
-      }
+    var queueArr = new Array(n).fill(0);
+    for (var i = 0; i < customers.length; i++) {
+      queueArr[0] += customers[i];
+      queueArr.sort(function(a, b) { return a - b} ); // sort in ascending order
     }
+    return queueArr[queueArr.length - 1];
   }
-  return time;
-}
 
 console.log(queueTime([5,3,4], 1));
-console.log(queueTime([5,3,4], 0));
 console.log(queueTime([], 1));
 console.log(queueTime([1,2,3,4,5], 100));
+console.log(queueTime([10,2,3,3], 2));
+console.log(queueTime([2,3,10], 2));
+console.log(queueTime([4,5,3,6], 3));
