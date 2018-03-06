@@ -28,6 +28,11 @@ function queueTime(customers, n) {
       time += customers[i];
     } else if (n == 0) {
       time = time;
+    } else if (n > customers.length) {
+      time = customers[i];
+      if (customers[i] < customers[i + 1]) {
+        time = customers[i + 1];
+      }
     }
   }
   return time;
@@ -36,3 +41,4 @@ function queueTime(customers, n) {
 console.log(queueTime([5,3,4], 1));
 console.log(queueTime([5,3,4], 0));
 console.log(queueTime([], 1));
+console.log(queueTime([1,2,3,4,5], 100));
