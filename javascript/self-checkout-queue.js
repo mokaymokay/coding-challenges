@@ -20,3 +20,15 @@ The 2nd, 3rd, and 4th people in the queue finish before the 1st person has finis
 - INPUT: queueTime([2,3,10], 2)
 - OUTPUT: 12
 */
+
+function queueTime(customers, n) {
+  var time = 0;
+  for (var i = 0; i < customers.length; i++) {
+    if (n == 1) {
+      time += customers[i];
+    }
+  }
+  return time;
+}
+
+console.log(queueTime([5,3,4], 1));
