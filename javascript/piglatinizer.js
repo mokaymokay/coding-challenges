@@ -8,7 +8,7 @@ Compose a JavaScript function that takes in a regular sentence or paragraph and
 returns the Pig Latin equivalent.
 */
 
-let piglatinizer = (word) => {
+let piglatinizeword = function(word) {
   let regex = /[aeiou]/gi;
   // if word begins with vowel
   if (word.search(regex) === 0) {
@@ -24,6 +24,17 @@ let piglatinizer = (word) => {
   return newWord;
 }
 
+function piglatinizer(input) {
+  // if input contains space or is a paragraph
+  if (input.includes(" ")) {
+    let arrayOfWords = input.split(" ");
+    return arrayOfWords.map(piglatinizeword).join(" ");
+  } else {
+    return piglatinizeword(input);
+  };
+}
+
 console.log(piglatinizer("egg"));
 console.log(piglatinizer("latin"));
 console.log(piglatinizer("cheers"));
+console.log(piglatinizer("who lives in a pineapple under the sea"));
