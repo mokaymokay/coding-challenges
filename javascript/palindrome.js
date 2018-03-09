@@ -14,19 +14,14 @@ same forward as it is backward). Otherwise, return the boolean false.
 - OUTPUT: false
 */
 
-function palindrome(str) {
+let palindrome = (str) => {
   var str = str.toLowerCase(),
       newString = "";
-
   for (var i = str.length - 1; i >= 0; i--) {
     newString += str[i];
   }
-  if (str === newString) {
-    return true;
-  } else {
-    return false;
-  }
+  return str === newString ?  true : false;
 }
 
-palindrome("racecar");
-palindrome("animal");
+console.log(palindrome("Racecar"));
+console.log(palindrome("animal"));
