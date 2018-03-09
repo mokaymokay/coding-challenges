@@ -18,8 +18,17 @@ let piglatinizeword = function(word) {
   let vowelIndex = word.indexOf(word.match(regex)[0]);
   // place consonants in variable
   let consonants = word.substr(0, vowelIndex);
+  let punctuationRegex = /([.!?])/;
+  // if word contains punctuation mark
+  if (punctuationRegex.test(word)) {
+    var punctuationIndex = word.indexOf(word.match(punctuationRegex)[0]);
+    var punctuation = word.substr(punctuationIndex);
+  } else {
+    punctuationIndex = word.length;
+    punctuation = "";
+  }
   // add components together
-  newWord = word.substr(vowelIndex) + consonants + "ay";
+  newWord = word.substr(vowelIndex, punctuationIndex - 1) + consonants + "ay" + punctuation;
   }
   return newWord;
 }
@@ -37,4 +46,4 @@ function piglatinizer(input) {
 console.log(piglatinizer("egg"));
 console.log(piglatinizer("latin"));
 console.log(piglatinizer("cheers"));
-console.log(piglatinizer("who lives in a pineapple under the sea"));
+console.log(piglatinizer("who lives in a pineapple under the sea?!"));
