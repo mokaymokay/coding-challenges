@@ -9,10 +9,21 @@ returns the Pig Latin equivalent.
 */
 
 let piglatinizer = (word) => {
-  if (word.search(/[aeiou]/gi) === 0) {
-    word += "way";
-    console.log(word);
+  let regex = /[aeiou]/gi;
+  // if word begins with vowel
+  if (word.search(regex) === 0) {
+   newWord = word + "way";
+  } else {
+  // if word begins with consonant, check where the first vowel is and get index
+  let vowelIndex = word.indexOf(word.match(regex)[0]);
+  // place consonants in variable
+  let consonants = word.substr(0, vowelIndex);
+  // add components together
+  newWord = word.substr(vowelIndex) + consonants + "ay";
   }
+  return newWord;
 }
 
-piglatinizer("egg");
+console.log(piglatinizer("egg"));
+console.log(piglatinizer("latin"));
+console.log(piglatinizer("cheers"));
