@@ -20,7 +20,7 @@ console.log(mergeArrays(myArray, alicesArray));
 var myArray     = [3, 4, 6, 10, 11, 20];
 var alicesArray = [1, 5, 8, 12, 14, 19];
 
-function mergeArrays(myArray, alicesArray) {
+let mergeArrays = (myArray, alicesArray) => {
   var newArray = [],
       m = 0,
       a = 0;
@@ -29,11 +29,9 @@ while (newArray.length < myArray.length + alicesArray.length) {
     if (myArray[m] < alicesArray[a] || a === alicesArray.length) {
       newArray.push(myArray[m]);
       m++;
-      console.log("m:" + m);
     } else {
       newArray.push(alicesArray[a]);
       a++;
-      console.log("a:" + a);
     }
   }
   return newArray;
