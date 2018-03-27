@@ -3,14 +3,25 @@ Implement an algorithm to determine if a string has all unique characters withou
 using additional data structures.
 */
 
+// function uniqueChars(string) {
+//   let newString = "";
+//   for (let i = 0; i < string.length; i++) {
+//     if (!newString.includes(string[i])) {
+//       newString += string[i];
+//     }
+//   }
+//   return newString === string;
+// }
+
 function uniqueChars(string) {
-  let newString = "";
   for (let i = 0; i < string.length; i++) {
-    if (!newString.includes(string[i])) {
-      newString += string[i];
+    for (let j = i + 1; j < string.length; j++) {
+      if (string[i] === string[j]) {
+        return false;
+      }
     }
   }
-  return newString === string ? true : false;
+  return true;
 }
 
 console.log(uniqueChars("apple"));
