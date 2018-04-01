@@ -13,3 +13,41 @@ The indexes need to be as small as possible.
 126235 is the smallest number gotten by taking 1 at index 2 and putting it at index 0
 
 */
+
+function smallest(n) {
+  let output = [];
+  let original = ("" + n).split("").map(Number); // turn into array of numbers
+  console.log(original);
+  let sorted = original.slice().sort(); // create sorted copy
+  console.log(sorted);
+  let digitToMove;
+  let indexFrom;
+  for (let i = 0; i < original.length; i++) {
+    if (sorted[i] !== original[i]) {
+      digitToMove = sorted[i];
+      indexFrom = original.indexOf(sorted[i]); // get index of where to remove digit
+      break;
+    }
+  }
+  console.log(digitToMove);
+  console.log(indexFrom);
+  let newNum = original.slice(); // create copy of original
+  newNum.splice(indexFrom, 1); // remove digit from copy of original
+  console.log(newNum);
+  let indexTo;
+  for (let i = 0; i < newNum.length; i++) { // locate where to insert digit
+    if (newNum[i] <= digitToMove && newNum[i + 1] > digitToMove) {
+      indexTo = i + 1;
+      break;
+    } else {
+      indexTo = 0;
+    }
+  }
+  newNum.splice(indexTo, 0, digitToMove); // insert digit to copy of original
+  console.log(newNum);
+  console.log(indexTo);
+  output.push(Number(newNum.join("")), indexFrom, indexTo);
+  return output;
+}
+
+console.log(smallest(296837));
