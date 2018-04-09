@@ -14,3 +14,18 @@ console.log(reduce(myArray, function(a,b) { return a + b }, 0));
 console.log(reduce(myArray, function(a,b) { return a - b }, 0));
 console.log(reduce(myArray, function(a,b) { return a * b }, 0));
 console.log(reduce(myArray, function(a,b) { return a / b }, 0));
+
+function recursiveReduce(arr, callback, accumulator) {
+  if (arr.length === 1) { return }
+  arr[0] = callback(arr[0], arr[1]);
+  arr.splice(1,1);
+  recursiveReduce(arr, callback, accumulator);
+  return arr[0] + accumulator;
+}
+
+console.log(myArray);
+console.log(recursiveReduce(myArray, function(a,b) {return a + b}, 0));
+console.log(myArray);
+console.log(recursiveReduce([1,2,3,4], function(a,b) {return a - b}, 0));
+console.log(recursiveReduce([1,2,3,4], function(a,b) {return a * b}, 0));
+console.log(recursiveReduce([1,2,3,4], function(a,b) {return a / b}, 0));
