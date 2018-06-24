@@ -10,8 +10,6 @@
 # time complexity: O(n)
 # space complexity: O(n)
 
-require 'set'
-
 def palindrome_permutation(str)
   # use set to keep track of lone characters
   lone_chars = Set.new()
@@ -19,7 +17,7 @@ def palindrome_permutation(str)
   str.length.times do |c|
     lone_chars.include?(str[c]) ? lone_chars.delete(str[c]) : lone_chars.add(str[c])
   end
-  # return true if set only contains one lone character
+  # return true if set only contains one or no lone characters
   return lone_chars.length <= 1
 end
 
