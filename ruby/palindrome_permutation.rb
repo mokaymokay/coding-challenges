@@ -7,20 +7,20 @@
 # palindrome_permutation("civil") => false
 # palindrome_permutation("livci") => false
 
+# time complexity: O(n)
+# space complexity: O(n)
+
+require 'set'
 
 def palindrome_permutation(str)
-  # use hash to store each character and number of occurence
-  char_count = {}
+  # use set to keep track of lone characters
+  lone_chars = Set.new()
+  # add character to set if doesn't already exist, otherwise delete
   str.length.times do |c|
-    char_count[str[c]] ? char_count[str[c]] += 1 : char_count[str[c]] = 1
+    lone_chars.include?(str[c]) ? lone_chars.delete(str[c]) : lone_chars.add(str[c])
   end
-  # use arrays to hold odd and even values
-  odd, even = [], []
-  char_count.each_value do |v|
-    v.even? ? even.push(v) : odd.push(v)
-  end
-  # true if only one value is odd and the rest are even; else false
-  return odd.length == 1 ?  true : false
+  # return true if set only contains one lone character
+  return lone_chars.length <= 1
 end
 
 p palindrome_permutation("civic")
