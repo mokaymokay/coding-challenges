@@ -1,6 +1,6 @@
 // This function is a recreation of JavaScript's built-in method .map() which
-// accepts an array and a 'callback' function as parameters, and passes in each
-// element of the array into the function and runs it.
+// accepts an array and a 'callback' function as parameters, performs the callback
+// on each element of the array and returns the new array.
 
 const map = (arr, callback) => {
   let result = []
