@@ -2,7 +2,7 @@
 // words as elements by 'count' number of times. The order of the elements in the
 // array does not matter, but repeated elements should be grouped.
 
-// time complexity: O(n * c)
+// time complexity: O(n + c)
 // space complexity: O(n)
 // where n = length of object and c = count to repeat each element
 
