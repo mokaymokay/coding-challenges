@@ -10,6 +10,9 @@
 # buddy_strings("abab", "abab") => true
 # buddy_strings("acccccb", "bccccca") => true
 
+# Time complexity: O(n), where n = length of a and b
+# Space complexity: O(1)
+
 def buddy_strings(a, b)
   a_len = a.length
   b_len = b.length
