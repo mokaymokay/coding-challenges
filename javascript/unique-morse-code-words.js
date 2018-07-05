@@ -1,15 +1,12 @@
 // Time complexity: O(n**2)
 // Space complexity: O(n)
 
+const morseCodeArray = [".-","-...","-.-.","-..",".","..-.","--.","....","..",".---","-.-",".-..","--","-.","---",".--.","--.-",".-.","...","-","..-","...-",".--","-..-","-.--","--.."]
+
 const uniqueMorseRepresentations = words => {
-  let morseCodeArray = [".-","-...","-.-.","-..",".","..-.","--.","....","..",".---","-.-",".-..","--","-.","---",".--.","--.-",".-.","...","-","..-","...-",".--","-..-","-.--","--.."]
-  let alphabets = []
-  for (let i = 10; i < 36; i++) { // O(1)
-    alphabets.push(i.toString(36))
-  }
   let morseCodeAlphabet = {}
-  for (let i in alphabets) { // O(1)
-    morseCodeAlphabet[alphabets[i]] = morseCodeArray[i]
+  for (let i = 0; i < 26; i++) { // O(1)
+    morseCodeAlphabet[(i + 10).toString(36)] = morseCodeArray[i]
   }
   let transformations = new Set
   for (let word of words) { // O(n**2)
