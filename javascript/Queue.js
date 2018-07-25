@@ -28,9 +28,4 @@ class Queue {
   }
 }
 
-let myQueue = new Queue()
-console.log(myQueue.enqueue(1,2,3));
-console.log(myQueue.dequeue());
-console.log(myQueue.peek());
-console.log(myQueue.size());
-console.log(myQueue.isEmpty());
+module.exports = Queue;
