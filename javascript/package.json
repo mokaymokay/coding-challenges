@@ -1,0 +1,22 @@
+{
+  "name": "js-coding-challenges",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Queue.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "mocha": "^5.2.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mokaymokay/coding-challenges/tree/master/javascript"
+  },
+  "author": "",
+  "license": "ISC"
+}
