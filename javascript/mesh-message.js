@@ -1,12 +1,22 @@
+// Given a network of senders and receivers in an adjacency list, find the shortest
+// path from one node to another.
+
+// Strategy: Do BFS of network starting from sender, use results to recreate shortest path.
+
+// Time complexity: O(n + m), n = number of nodes, m = number of neighbors
+// Space complexity: O(n)
+
 const Queue = require('./Queue');
 
 const reconstructShortestPath = (allPaths, start, end) => {
   const shortestPath = []
   // start with end node
   let current = end
-  // if
+  // create path
   while (current !== null) {
+    // add current node to path in reverse order
     shortestPath.unshift(current)
+    // set new current to receiver of one-to-one path in object
     current = allPaths[current]
   }
   return shortestPath
@@ -31,7 +41,7 @@ module.exports = {
       if (current === end) {
         return reconstructShortestPath(allPaths, start, end)
       }
-      // add neighbors to queue and path to paths hash if it does not already exist
+      // add neighbors to queue and path to paths object if it does not already exist
       graph[current].map((neighbor) => {
         if (!allPaths.hasOwnProperty(neighbor)) {
           nodesToVisit.enqueue(neighbor)
