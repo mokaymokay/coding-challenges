@@ -34,4 +34,12 @@ describe('Two sum index', function() {
       assert.deepEqual(actual, expected)
     })
   })
+
+  describe('Testing for input [746, 687, 331, 217, 20, 564, 200, 578, 217, 948] and 781', function () {
+    it('should return [3,5]', function () {
+      actual = twoSumIndex([746, 687, 331, 217, 20, 564, 200, 578, 217, 948], 781)
+      expected = [3, 5]
+      assert.deepEqual(actual, expected)
+    })
+  })
 })
