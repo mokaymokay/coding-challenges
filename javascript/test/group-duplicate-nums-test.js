@@ -1,6 +1,5 @@
 const assert = require('assert')
-const duplicateNums = require('../group-duplicate-nums.js')
-const groupDuplicateNums = duplicateNums.groupDuplicateNums
+const groupDuplicateNums = require('../group-duplicate-nums')
 
 describe('Group duplicate numbers', function() {
   describe('Testing for input [3, 2, 6, 2, 1, 3]', function() {

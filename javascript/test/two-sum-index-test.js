@@ -1,6 +1,5 @@
 const assert = require('assert')
-const twoSum = require('../two-sum-index.js')
-const twoSumIndex = twoSum.twoSumIndex
+const twoSumIndex = require('../two-sum-index')
 
 describe('Two sum index', function() {
   describe('Testing for input [1,2,3] and 4', function() {

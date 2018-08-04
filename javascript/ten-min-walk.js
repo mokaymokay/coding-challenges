@@ -4,13 +4,13 @@
 // Time complexity: O(n)
 // Space complexity: O(n)
 
-module.exports = {
-  isVaildWalk: function(directions) {
-    if (directions.length !== 10) return false
-    const count = {}
-    for (let direction of directions) {
-      count[direction] === undefined? count[direction] = 1 : count[direction] += 1
-    }
-    return count['n'] === count['s'] && count['w'] === count['e']
+const isVaildWalk = (directions) => {
+  if (directions.length !== 10) return false
+  const count = {}
+  for (let direction of directions) {
+    count[direction] === undefined? count[direction] = 1 : count[direction] += 1
   }
+  return count['n'] === count['s'] && count['w'] === count['e']
 }
+
+module.exports = isVaildWalk

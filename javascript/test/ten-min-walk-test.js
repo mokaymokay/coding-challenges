@@ -1,6 +1,5 @@
 const assert = require('assert')
-const tenMinWalk = require('../ten-min-walk')
-const isVaildWalk = tenMinWalk.isVaildWalk
+const isVaildWalk = require('../ten-min-walk')
 
 describe('Ten Minute Walk', function() {
   describe('Route one', function() {
