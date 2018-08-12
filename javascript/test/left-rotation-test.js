@@ -5,7 +5,7 @@ describe('Left Rotation', function() {
   describe('Testing for input "5 4" and "1 2 3 4 5"', function() {
     it('should return "5 1 2 3 4"', function() {
       actual = leftRotation('5 4', '1 2 3 4 5')
-      expected = '5 1 2 4 4'
+      expected = '5 1 2 3 4'
       assert.equal(actual, expected)
     })
   })
