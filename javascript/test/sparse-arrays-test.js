@@ -18,9 +18,9 @@ describe('Sparse Arrays', function() {
     })
   })
   
-  describe('Testing for inputs ["sdaklfj", "asdjf", "na", "basdn", "sdaklfj", "asdjf", "na", "asdjf", "na", "basdn", "sdaklfj", "asdjf"] and ["abcde", "sdaklfj", "asdjf", "na", "basdn"]', function () {
+  describe('Testing for inputs ["abcde", "sdaklfj", "asdjf", "na", "basdn", "sdaklfj", "asdjf", "na", "asdjf", "na", "basdn", "sdaklfj", "asdjf"] and ["abcde", "sdaklfj", "asdjf", "na", "basdn"]', function () {
     it('should return [1,3,4,3,2]', function () {
-      actual = sparseArrays(["sdaklfj", "asdjf", "na", "basdn", "sdaklfj", "asdjf", "na", "asdjf", "na", "basdn", "sdaklfj", "asdjf"], ["abcde", "sdaklfj", "asdjf", "na", "basdn"])
+      actual = sparseArrays(["abcde", "sdaklfj", "asdjf", "na", "basdn", "sdaklfj", "asdjf", "na", "asdjf", "na", "basdn", "sdaklfj", "asdjf"], ["abcde", "sdaklfj", "asdjf", "na", "basdn"])
       expected = [1, 3, 4, 3, 2]
       assert.deepEqual(actual, expected)
     })
