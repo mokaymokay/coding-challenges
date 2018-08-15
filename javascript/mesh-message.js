@@ -6,7 +6,7 @@
 // Time complexity: O(n + m), n = number of nodes, m = number of neighbors
 // Space complexity: O(n)
 
-const Queue = require('./Queue');
+const Queue = require('./data-structures/Queue');
 
 const reconstructShortestPath = (allPaths, start, end) => {
   const shortestPath = []
