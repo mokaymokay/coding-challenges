@@ -4,7 +4,8 @@ class StringCalculator
     if input.empty?
       0
     else
-      input.to_i
+      nums = input.split(",").map { |num| num.to_i }
+      nums = nums.reduce(:+)
     end
   end
 end
